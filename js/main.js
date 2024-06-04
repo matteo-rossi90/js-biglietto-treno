@@ -20,47 +20,47 @@ console.log(kmUser, ageUser);
 
 //prezzo del biglietto calcolato in base ai km da percorrere
 let x = 0.21;
-let ticketPrice = x * kmUser;
-let sconto18 = (ticketPrice * 0.20);//se età < 18 anni = prezzo al -20%
-let sconto65 = (ticketPrice * 0.40);//se età > 65 anni = prezzo al -40%
+let totPrice = x * kmUser;
+let sconto18 = (totPrice * 0.20);//prezzo al -20%
+let sconto65 = (totPrice * 0.40);//prezzo al -40%
 
-console.log(ticketPrice, sconto18, sconto65);
+console.log(totPrice, sconto18, sconto65);
 
 //in base alle'età stabilire il tipo di sconto
 
     if(ageUser < 18){
-        ticketPrice;
+        totPrice;
         sconto18;
 
-        let ticketPrice18 = ticketPrice - sconto18;
+        let ticketPrice18 = totPrice - sconto18; // se età del passeggero è < 18 anni = sconto al -20%
 
         console.log(ticketPrice18);
 
         //output del prezzo con massimo due decimali per indicare i centesimi
         document.getElementById('price').innerHTML = ticketPrice18.toFixed(2) + " euro ";
 
-        // console.log(ticketPrice18.toFixed(2));
+        console.log(ticketPrice18.toFixed(2));
 
     } else if(ageUser > 65){
-        ticketPrice;
+        totPrice;
         sconto65;
 
-        let ticketPrice65 = ticketPrice - sconto65;
+        let ticketPrice65 = totPrice - sconto65; // se età del passeggero è > 65 anni = sconto al -40%
 
         console.log(ticketPrice65);
 
         //output del prezzo con massimo due decimali per indicare i centesimi
         document.getElementById('price').innerHTML = ticketPrice65.toFixed(2) + " euro ";
         
-        // console.log(ticketPrice65.toFixed(2));
+        console.log(ticketPrice65.toFixed(2));
     }else{
         let x = 0.21;
-        let ticketPrice = x * kmUser; // altrimenti nessuno sconto
+        let totPrice = x * kmUser; // per tutte le altre fasce d'età nessuno sconto
 
         //output del prezzo con massimo due decimali per indicare i centesimi
-        document.getElementById('price').innerHTML = ticketPrice.toFixed(2) + " euro ";
+        document.getElementById('price').innerHTML = totPrice.toFixed(2) + " euro ";
         
-        // console.log(ticketPrice.toFixed(2));
+        console.log(totPrice.toFixed(2));
     }
 
 
