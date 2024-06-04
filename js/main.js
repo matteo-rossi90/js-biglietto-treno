@@ -19,21 +19,20 @@ let ageUser = prompt("Quanti anni hai?");
 console.log(kmUser, ageUser);
 
 //prezzo del biglietto calcolato in base ai km da percorrere
-// let x = 0.21;
-// let ticketPrice = x * kmUser;
-// console.log(ticketPrice);
+let x = 0.21;
+let ticketPrice = x * kmUser;
+let sconto18 = (ticketPrice * 0.20);//se età < 18 anni = prezzo al -20%
+let sconto65 = (ticketPrice * 0.40);//se età > 65 anni = prezzo al -40%
+
+console.log(ticketPrice, sconto18, sconto65);
 
 //in base alle'età stabilire il tipo di sconto
 
     if(ageUser < 18){
-        let x = 0.21;
-        let y = 0.20;
-        // let ticketPrice;
-        let sconto18 = (((x * kmUser) / 100) * y);//se età < 18 anni = prezzo al -20%
+        ticketPrice;
+        sconto18;
 
-        console.log(sconto18);
-
-        let ticketPrice18 = (x * kmUser) - sconto18;
+        let ticketPrice18 = ticketPrice - sconto18;
 
         console.log(ticketPrice18);
 
@@ -43,12 +42,10 @@ console.log(kmUser, ageUser);
         // console.log(ticketPrice18.toFixed(2));
 
     } else if(ageUser > 65){
-        let x = 0.21;
-        let y = 0.40;
-        // let ticketPrice;
-        let sconto65 = (((x * kmUser) / 100) * y);//se età > 65 anni = prezzo al -40%
-        console.log(sconto65);
-        let ticketPrice65 = (x * kmUser) - sconto65;
+        ticketPrice;
+        sconto65;
+
+        let ticketPrice65 = ticketPrice - sconto65;
 
         console.log(ticketPrice65);
 
@@ -58,13 +55,13 @@ console.log(kmUser, ageUser);
         // console.log(ticketPrice65.toFixed(2));
     }else{
         let x = 0.21;
-        let ticketPrice = x * kmUser;
-        console.log(ticketPrice); // altrimenti nessuno sconto
+        let ticketPrice = x * kmUser; // altrimenti nessuno sconto
 
         //output del prezzo con massimo due decimali per indicare i centesimi
         document.getElementById('price').innerHTML = ticketPrice.toFixed(2) + " euro ";
         
         // console.log(ticketPrice.toFixed(2));
     }
+
 
 
